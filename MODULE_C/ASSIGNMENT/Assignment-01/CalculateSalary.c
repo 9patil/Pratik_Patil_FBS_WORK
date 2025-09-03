@@ -10,7 +10,7 @@ void main(){
 	 
 	 if (bs<=5000){
 	 	da=bs*0.10;
-	 	ta=bs*015;
+	 	ta=bs*0.15;
 	 	hra=bs*0.20;
 	 }
 	 else {
@@ -21,4 +21,5 @@ void main(){
 	 }
 	 totalsalary=da+ta+hra+bs;
 	 printf("This is Total Salary - %lf",totalsalary);
+
 }
