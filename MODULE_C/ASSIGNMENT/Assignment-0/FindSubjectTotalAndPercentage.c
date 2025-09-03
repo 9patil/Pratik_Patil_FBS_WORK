@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 void main(){
-	int English, Marathi, Hindi, History, Geography;
+		int English, Marathi, Hindi, History, Geography;
 	
 	printf("Enter English Marks- ");
 	scanf("%d",&English);
@@ -20,9 +20,10 @@ void main(){
 	scanf("%d",&Geography);
 	
 	int Total= English + Marathi + Hindi + History + Geography ;
-	printf("Total Marks of Five Subject- %d /n",Total);
+	printf("Total Marks of Five Subject- %d \n",Total);
 	
-	float Percentage = (400/Total)*100;
+	float Percentage = (Total/500.0)*100;
 	printf("The Percentage is- %0.2f", Percentage);
 	
 }
+
