@@ -1,42 +1,39 @@
 //menu driven
-
 #include<stdio.h>
 void main()
 {
-//	int no;
-	char opt;
-   printf("sr   choise      ");
-   printf("\n 1   Even Odd   ");
-   printf("\n 2   Prime No    ");
-   printf("\n 3   Pallindrome ");
-   printf("\n 4   Check Num   ");
-   printf("\n 5   Reverse Num ");
-   printf("\n 6   Sum         ");
-  
-   printf("\nChoose one option:- ");
-   scanf("%c", &opt);
-   
-  //check even or odd  
-   if (opt=='1')
-   {
-   	      int num;
-   	      printf("Enter a Num: ");
-   	      scanf("%d",&num);
-   	  if (num%2==0)
-		 {
-   	  	    printf("No is Even");
-		 }
-		 else 
-		 {
-		 	printf("No is Odd");
-		 }
-   	   
-   }
-   
-  //prime or not  
-   if (opt=='2')
-   {
-   	  int num, i, isPrime = 1;
+	while (1)
+	{
+	
+	
+	
+	printf("\n 1 Even or Odd\n");
+	printf("2 Prime or Not");
+	printf("3 Pallindrome or Not\n");
+	printf("4 Amstrong Or Not\n");
+	printf("5 Perfect Or not \n");
+	printf("6 Exit \n");
+	
+	int choice;
+	printf("Enter Choice");
+	scanf("%d",&choice);
+
+	//even odd
+	if (choice==1)
+	{
+		int num;
+			printf("Enter a number: ");
+			scanf("%d",&num);
+		if (num %2 ==0)
+			printf("Even");
+		else
+			printf("Odd");
+	}
+	
+	//Prime or not
+	 else if (choice==2)
+	{
+		 int num, i, isPrime = 1;
 
     printf("Enter the number: ");
     scanf("%d", &num);
@@ -59,82 +56,92 @@ void main()
         printf("This is a Prime Number");
     else
         printf("This is NOT a Prime Number");
-   }
-   
- //palindrome or not  
- 
-   if (opt=='3')
-   {
-   	 int num,sum=0,rev=0;
+		
+	}
+	
+	//Pallindrome or not
+	else if (choice ==3)
+	{
+		int num,temp,rev=0,rem;
+	
+	printf("Enter Three digit Num- ");
+	scanf("%d",&num);
+	temp=num;
+    rem=num %10;
+    rev=rev*10+ rem;
+    num=num/10;
+    rem=num % 10;
+    rev=rev*10+rem;
+    num=num/10;
+    rem=num%10;
+    rev=rev*10+rem;
+    if (temp== rev)
+    
+    printf("This Number is Palindrome");
+    else
+    printf("This Number is Not Palindrome");
+		
+	}
+	
+	//Amstrong or not
+	else if (choice == 4)
+	{
+	int num, rem,sum=0;
 	printf("Enter a Number: ");
-	scanf("%d", &num);
+	scanf("%d",&num);
 	int temp=num;
 	
+	while (num > 0)
+	{
+		rem=num % 10;
+		sum=sum + rem * rem * rem;
+		num=num / 10;
+	}
+	if (sum==temp)
+	        printf("This Number is Amstrong");
+	    
+	    else
+	        printf("This Number is Not Amstrong");	
+	}
 	
-	while (num!=0)
+	
+	//perfect number
+	else if (choice == 5)
 	{
-		int rem= num % 10;
-		rev = rev * 10 + rem;
-		num = num / 10;
-	}
-	if ( temp == rev)
+	int num,sum=0;
+	int i= 1;
+	printf("Enter a Num: ");
+	scanf("%d",&num);
+	
+	while (i<=num/2)
 	{
-	     printf("This Number is Palindrome ");
+		
+    	if (num % i==0)
+    	{
+	     	sum=sum + i;
+     	}
+     	  i++;
     }
-	else 
-	{
-		   printf("This Number is Not Palindrome ");  
+        	if (num==sum)
+        	{
+	          printf("This Perfect Number");
+	 
+             }
+         	else
+        	{
+              printf("This is Not Perfect Number");
+             }
 	}
-   }
-   
-//check Number is Positive Negative 
-
-   if (opt=='4')
-   {
-   	int no ;
-   	printf("Enter a Number to check: ");
-   	scanf("%d",&no);
-   	
-      	if (no<=0)
-   	  {
-	     printf("This no is Positive ");
-	   }
-	   else 
-	   {
-	   	printf("This is Negative");
-	   }
-   }
-   
-//Reverse number
-   if(opt=='5')
-   {
-   	int num, reversedNum = 0, remainder;
-
-    printf("Enter an integer: ");
-    scanf("%d", &num);
-
-    while (num != 0) {
-        remainder = num % 10;          
-        reversedNum = reversedNum * 10 + remainder; 
-        num /= 10;                     
-    }
-
-    // Print the reversed number
-    printf("Reversed number: %d\n", reversedNum);
-   }
-   
-//Sum of two digit
-   
-   if (opt=='6')
-   {
-   	int a,b,sum;
-   	printf("Enter First Num: ");
-   	scanf("%d",&a);
-   	printf("Enter Second Num: ");
-   	scanf("%d",&b);
-   	
-   	sum= a+b;
-   	printf("Sum is :%d ",sum);
-   }
-   
+	else if  (choice ==6)
+	{
+	
+		printf("Exiting...\n");
+			break;
+	}
+	else
+	{
+		printf("Invalid Choice\n");
+	}
+	
+	}
 }
