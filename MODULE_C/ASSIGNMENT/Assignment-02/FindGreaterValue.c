@@ -4,20 +4,37 @@
 #include<stdio.h>
 void main()
 {
-	int a,b,c;
+	int a;
+	int b;
+	int c;
+	printf("Print first Num :" );
+	scanf("%d",&a);
+	printf("Print second Num :" );
+	scanf("%d",&b);
 	printf("Print Three Num :" );
-	scanf("%d %d %d",&a,&b,&c);
+	scanf("%d",&c);
 	
-	if(a>b)
+	if (a>c)
 	{
-		printf("Greater value is A");
-	}
-	else if(b>a)
-	{
-		printf("Greater value is B");
+		
+		if(a>b)
+		{
+			printf("Greater value is A");
+		}
+		else 
+		{
+			printf("Greater value is B");
+		}
 	}
 	else
 	{
-		printf("Greater value is c");
+	
+		if (b>c)
+		{
+			printf("Greater value is B");
+		}
+		else 
+			printf("Grater value is C");
 	}
+
 }
