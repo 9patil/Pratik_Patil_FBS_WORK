@@ -13,5 +13,6 @@ void main()
 	}
 	int sum= ld + rem;
 	
-	printf("Sum is :%d ",rem,num ,sum);
+	printf("Sum is :%d ",sum);
+
 }
