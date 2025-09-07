@@ -1,0 +1,33 @@
+//Range Prime
+#include<stdio.h>
+void getPrimeRange();
+void main()
+{
+	getPrimeRange();	
+}
+void getPrimeRange()
+{
+	int min=1,max, i , j, count;
+	
+	printf("Enter the limit for prime (N): ");
+	scanf("%d",&max);
+	
+	for (i=min; i<=max; i++)
+	{
+		count=0;
+		
+		for (j=1; j<=i; j++)
+		{
+			if (i % j==0)
+			{
+				count++;
+			}
+	    }
+	    
+			if (count==2)
+			{
+			
+			    printf("%d ",i);
+	     	}
+		
+}
